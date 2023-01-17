@@ -1,3 +1,8 @@
+/* *********************** */
+
+/* GENERALITIES */
+
+/* *********************** */
 *{
     box-sizing: border-box;
 }
@@ -7,18 +12,121 @@ img{
     height: 5rem;
 }
 
+h2 {
+    font-size: 2rem;
+}
+
+/* *********************** */
+
+/* UTILITIES */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* *********************** */
+
+
+
+/* *********************** */
+
+/* MAIN */
+
+/* *********************** */
+
+/* Header */
+header {
+    background-color: #306EA9;
+}
+
+header h1 {
+    margin: 0;
+    padding: 1rem 0;
+    color: #F2C206;
+}
+
+
+/* Table */
 .pokemonType{
     width: 2.5rem;
     height: 2.5rem;
 }
 
-table{
-    border: 1px solid black;
+table {
+    border: 1px solid rgb(217, 216, 216);
     margin: 0 auto;
     text-align: center;
-    width: 80%;
+    width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
 }
 
 table a {
     text-decoration: none;
+}
+th {
+    background-color: lightBlue;
+    padding: 1rem;
+}
+
+td {
+
+    border-bottom: 1px solid rgb(217, 216, 216);
+    background-color: rgba(226, 226, 226, 0.223);
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(226, 226, 226, 0.273);
+}
+
+tr:hover {
+    background-color: rgba(226, 226, 226, 0.365)
+}
+
+/* Modal */
+.modalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal {
+    position: fixed;
+    background-color: #fff;
+    width: 50rem;
+    height: 30rem;
+    top: 100px;
+    display: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.modalDisplay {
+    transition: all 1s;
+    display: block;
+}
+
+.overlay {
+    background-color: rgba(131, 131, 131, 0.56);
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.modalImg {
+    height: 20rem;
+    width: 20rem;
+}
+
+.btn {
+    all: unset;
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    background-color: black;
 }
