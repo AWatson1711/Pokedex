@@ -1,10 +1,9 @@
-import { randomMintoMax } from "./randomFunction.js";
-
 const btnGenerate = document.getElementById('generate');
-const sectionContainer = document.getElementById('sectionContainer')
+const sectionContainer = document.getElementById('sectionContainer');
+let counter = 0;
 
 async function getPokemonRandom (){
-    let promise = await fetch('https://pokebuildapi.fr/api/v1/pokemon/limit/400');
+    let promise = await fetch('https://pokebuildapi.fr/api/v1/random/team');
     
     if(promise.ok == true){
         let pokemons = await promise.json();
@@ -15,28 +14,59 @@ async function getPokemonRandom (){
 };
 
 async function showPokemonRandom(pokemons){
-
-    const pokemonContainer = document.createElement('article');
+    
+   const articleElt = document.getElementById('articleElt');
+   const divContainer = document.getElementById('divContainer');
+    
 
     btnGenerate.addEventListener('click', ()=>{
-        pokemonContainer.innerHTML = '';
-        let random = randomMintoMax(0, pokemons.length ) - 1;
+       if(!document.querySelector('.pokemonsContainer')){
+        for (const pokemon of pokemons) {
+            const pokemonsContainer = document.createElement('div');
+            pokemonsContainer.setAttribute('class', 'pokemonsContainer');
+
+            const pokemonImg = document.createElement('img');
+            pokemonImg.setAttribute('src', pokemon.image);
+    
+            
+    
+            pokemonsContainer.append(pokemonImg);
+            divContainer.appendChild(pokemonsContainer)
+            
+        }
+        sectionContainer.appendChild(divContainer);
+        
+
         const pokemonImg = document.createElement('img');
+        pokemonImg.setAttribute('src', pokemons[counter].image);
+
         const pokemonName = document.createElement('h2');
-        const textName = document.createTextNode(pokemons[random].name);
-        
-        pokemonImg.setAttribute('src', pokemons[random].image);
-        
+        const textName = document.createTextNode(pokemons[counter].name);
         pokemonName.appendChild(textName);
-       
-        
-        
 
-        pokemonContainer.append(pokemonImg, pokemonName);
-        sectionContainer.appendChild(pokemonContainer)
-        
-        
 
+
+        articleElt.append(pokemonImg, pokemonName);
+        sectionContainer.appendChild(articleElt);
+        counter++;
+       }else if(counter < 6){
+        
+        
+        articleElt.innerHTML = '';
+
+        const pokemonImg = document.createElement('img');
+        pokemonImg.setAttribute('src', pokemons[counter].image);
+
+        const pokemonName = document.createElement('h2');
+        const textName = document.createTextNode(pokemons[counter].name);
+        pokemonName.appendChild(textName);
+
+
+
+        articleElt.append(pokemonImg, pokemonName);
+        sectionContainer.appendChild(articleElt);
+        counter++;
+       }
         
     });
 };

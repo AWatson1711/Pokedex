@@ -9,4 +9,15 @@ async function getPokemon (){
     };
 };
 
-export {getPokemon};
+async function getPokemonType (){
+    let promise = await fetch('https://pokebuildapi.fr/api/v1/types');
+    
+    if(promise.ok == true){
+        let types = await promise.json();
+        return types;
+    }else{
+        // Si error
+    };
+};
+
+export {getPokemon, getPokemonType};

@@ -28,6 +28,22 @@ a {
     margin: 0 auto;
 }
 
+#generate {
+    all: unset;
+    border: 1px solid #306EA9;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    margin: 2rem;
+    background-color: #F2C206;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#generate:hover {
+    background-color: #306EA9;
+    color: #F2C206;
+    transform: scale(1.1);
+}
 /* *********************** */
 
 
@@ -148,4 +164,29 @@ tr:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column-reverse;
+    }
+    
+    #articleElt {
+        border: 2px solid #306EA9;
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    #articleElt img {
+        height: 15rem;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .pokemonsContainer {
+        border: 2px solid #306EA9;
+        margin: 0 1rem;
+    }
+    
+    #divContainer {
+        display: flex;
+        width: 100%;
+        justify-content: center;
 }

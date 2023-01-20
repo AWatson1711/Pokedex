@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
+    <title>PokeCards</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pokeCards.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -18,22 +20,30 @@
             </nav>
         </div>
     </header>
-
     <main>
-        <section class="container">
-            <h2>Bienvenu sur pokédex ! 1er Génération</h2>
-            <div class="modalContainer">
-                <table id="pokemonsContainer">
+        <h2>PokéCards ShowDown</h2>
+        <section id="cardsShowDown">
+            <article class="player">
 
-                </table>
-            </div>
+            </article>
+            <div>VS</div>
+            <article class="computer">
+
+            </article>
+
         </section>
-    </main>
+        <div class="btnContainer"><button id="btnShowDown">ShowDown</button></div>
+        <section id="showPokemonCards">
 
+        </section>
+
+    </main>
     <footer>
 
     </footer>
 
-    <script type="module" src="assets/js/script.js"></script>
+
+    <script type="module" src="assets/js/pokeCards.js"></script>
 </body>
+
 </html>
